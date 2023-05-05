@@ -10,7 +10,7 @@ const requiredInputs = document.querySelectorAll('input');
 const search = document.getElementById('search');
 const article = document.getElementById('article');
 const fragment = document.createDocumentFragment()
-
+const clear = document.getElementById('reset-btn')
 
 // customer class 
 
@@ -73,6 +73,13 @@ addBtn.addEventListener('click',(e)=>{
     display(customers)
     fillSelect(customers)
     form.reset();
+})
+
+
+// reset event 
+
+clear.addEventListener('click',()=>{
+    localStorage.clear()
 })
 
 
