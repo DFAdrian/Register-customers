@@ -238,10 +238,13 @@ body{
       flex-direction: column;
       align-items: center;
     }
+     
+     .list-item{
+      width: 270px;
+    }
+      
     .section-form{
-  
       width: 100%;
-
     }
     .section-list{
       width: 100%;
