@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="section-form">
+        <form class="form" id="form">
+            <p class="title">Register Customer</p>
+                <div class="flex">
+                    <label>
+                        <input required type="text" class="input" id="name">
+                        <span>Firstname</span>
+                    </label>
+            
+                    <label>
+                        <input required type="text" class="input" id="lastName">
+                        <span>Lastname</span>
+                    </label>
+                </div>  
+                    
+            <label>
+                <input required type="email" class="input" id="email">
+                <span>Email</span>
+            </label> 
+                
+            <label>
+                <input required type='tel' class="input" id="phone">
+                <span>Phone</span>
+            </label>
+            <label>
+                <input required type='text' class="input" id="address">
+                <span>Address</span>
+            </label>
+            <button type="submit" class="btn" id="add-btn">Register</button>
+        </form>
+        <div class="group">
+            <label for="search">Search
+                <select placeholder="Search" class="search-input" id="search">
+                </select>
+            </label>
+        </div>
+        <article class="search-article" id="article">
+            
+        </article>
+    </section>
+    <section class="section-list">
+        <ul class="section-list__ul" id="ul">
+            
+        </ul>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
