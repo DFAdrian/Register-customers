@@ -155,7 +155,7 @@ body{
   .list-item{
     list-style: none;
     box-shadow: 0 0 5px #0003;
-    min-width: 240px;
+    width: 310px;
     padding: 1.2rem;
     border-radius: 5px;
     color: #0009;
