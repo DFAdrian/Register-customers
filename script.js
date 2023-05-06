@@ -80,6 +80,7 @@ addBtn.addEventListener('click',(e)=>{
 
 clear.addEventListener('click',()=>{
     localStorage.clear()
+    location.reload()
 })
 
 
