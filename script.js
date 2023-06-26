@@ -47,8 +47,16 @@ function addCustomer(list){
     list.push(newCustomer)
 }
 
-function display(data){
-    data.map(client=>ul.innerHTML += `<li class="list-item"><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}</li>`)
+function display(data) {
+  const fragment = document.createDocumentFragment();
+  
+  data.map((client) => {
+    const li = document.createElement("li");
+    li.className("list-item");
+    li.innerHTML = `<b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
+    fragment.appendChild(li);
+  });
+  ul.appendChild(fragment);
 }
 
 
