@@ -19,7 +19,10 @@ class Customers {
     (this.name = name),
       (this.phone = phone),
       (this.email = email),
-      (this.address = address);
+      (this.address = address),
+      (this.day = new Date().getDate()),
+      (this.month = new Date().getMonth()),
+      (this.year = new Date().getFullYear());
   }
 }
 
@@ -55,7 +58,7 @@ function display(data) {
   data.map((client, index) => {
     const li = document.createElement("li");
     li.className = "list-item";
-    li.innerHTML = `<b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
+    li.innerHTML = `<span>${client.month}/${client.day}/${client.year}</span><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
     li.id = index;
     fragment.appendChild(li);
   });
