@@ -50,6 +50,8 @@ function addCustomer(list) {
   list.push(newCustomer);
 }
 
+//display function
+
 function display(data) {
   const fragment = document.createDocumentFragment();
   ul.innerHTML = "";
