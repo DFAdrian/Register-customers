@@ -9,7 +9,6 @@ const form = document.getElementById("form");
 const requiredInputs = document.querySelectorAll("input");
 const search = document.getElementById("search");
 const article = document.getElementById("article");
-const fragment = document.createDocumentFragment();
 const clear = document.getElementById("reset-btn");
 
 // customer class
@@ -101,15 +100,21 @@ clear.addEventListener("click", () => {
 
 //search event
 
+
 search.addEventListener("change", () => {
   article.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+  const div = document.createElement("div");
+  div.className = "search-card";
   let selected = search.selectedIndex;
   const p = document.createElement("p");
   p.setAttribute("class", "show-search list-item");
   p.innerHTML = `<b>Name:</b>${customers[selected].name}<b>Phone:</b>${customers[selected].phone}<b>Email:</b>${customers[selected].email}<b>Address:</b>${customers[selected].address}`;
-  fragment.appendChild(p);
+  div.appendChild(p);
+  fragment.appendChild(div);
   article.append(fragment);
 });
+
 
 // delete element
 ul.addEventListener("click", (e) => {
