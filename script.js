@@ -20,7 +20,7 @@ class Customers {
       (this.email = email),
       (this.address = address),
       (this.day = new Date().getDate()),
-      (this.month = new Date().getMonth()),
+      (this.month = new Date().getMonth() + 1),
       (this.year = new Date().getFullYear());
   }
 }
