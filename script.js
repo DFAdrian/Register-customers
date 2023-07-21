@@ -55,14 +55,20 @@ function addCustomer(list) {
 function display(data) {
   const fragment = document.createDocumentFragment();
   ul.innerHTML = "";
-
-  data.map((client, index) => {
-    const li = document.createElement("li");
-    li.className = "list-item";
-    li.innerHTML = `<span>${client.month}/${client.day}/${client.year}</span><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
-    li.id = index;
-    fragment.appendChild(li);
-  });
+  
+  if (data.length <= 0) {
+    const p = document.createElement("p");
+    p.textContent = "No customers";
+    fragment.appendChild(p);
+  } else {
+    data.map((client, index) => {
+      const li = document.createElement("li");
+      li.className = "list-item";
+      li.innerHTML = `<span>${client.month}/${client.day}/${client.year}</span><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
+      li.id = index;
+      fragment.appendChild(li);
+    });
+  }
   ul.appendChild(fragment);
 }
 
@@ -97,6 +103,7 @@ addBtn.addEventListener("click", (e) => {
 
 clear.addEventListener("click", () => {
   localStorage.clear();
+  localStorage.setItem("data", JSON.stringify(customers));
   location.reload();
 });
 
