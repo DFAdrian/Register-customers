@@ -103,7 +103,6 @@ addBtn.addEventListener("click", (e) => {
 
 clear.addEventListener("click", () => {
   localStorage.clear();
-  localStorage.setItem("data", JSON.stringify(customers));
   location.reload();
 });
 
