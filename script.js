@@ -3,6 +3,7 @@ const lastName = document.getElementById("lastName");
 const phone = document.getElementById("phone");
 const email = document.getElementById("email");
 const address = document.getElementById("address");
+const estimate = document.getElementById("estimate");
 const ul = document.getElementById("ul");
 const addBtn = document.getElementById("add-btn");
 const form = document.getElementById("form");
@@ -14,11 +15,12 @@ const clear = document.getElementById("reset-btn");
 // customer class
 
 class Customers {
-  constructor(name, phone, email, address) {
+  constructor(name, phone, email, address,estimate) {
     (this.name = name),
       (this.phone = phone),
       (this.email = email),
       (this.address = address),
+      (this.estimate = estimate),
       (this.day = new Date().getDate()),
       (this.month = new Date().getMonth() + 1),
       (this.year = new Date().getFullYear());
@@ -45,7 +47,8 @@ function addCustomer(list) {
     `${customerName.value} ${lastName.value}`,
     phone.value,
     email.value,
-    address.value
+    address.value,
+    estimate.value
   );
   list.push(newCustomer);
 }
@@ -64,7 +67,7 @@ function display(data) {
     data.map((client, index) => {
       const li = document.createElement("li");
       li.className = "list-item";
-      li.innerHTML = `<span>${client.month}/${client.day}/${client.year}</span><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}`;
+      li.innerHTML = `<span>${client.month}/${client.day}/${client.year}</span><b>Name:</b>${client.name}<b>Phone:</b>${client.phone}<b>Email:</b>${client.email}<b>Address:</b>${client.address}<b>Estimate:</b>${client.estimate}`;
       li.id = index;
       fragment.appendChild(li);
     });
