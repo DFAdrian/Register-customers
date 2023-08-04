@@ -125,13 +125,3 @@ search.addEventListener("change", () => {
   fragment.appendChild(div);
   article.append(fragment);
 });
-
-
-// delete element
-ul.addEventListener("click", (e) => {
-  const index = e.target.id;
-  customers.splice(index, 1);
-  localStorage.setItem("data", JSON.stringify(customers));
-  display(customers);
-  fillSelect(customers);
-});
